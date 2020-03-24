@@ -30,8 +30,8 @@ Make sure you have the following installed:
 
 Fork this repository and clone your fork
 ```bash
-$ git clone git@github.dxc.com:<YOUR-PROFILE>/frontend.git
-$ cd frontend
+$ git clone git@github.com:<YOUR-PROFILE>/mayor-ui.git
+$ cd mayor-ui
 ```
 Run `npm install` to install library dependencies
 ```bash
