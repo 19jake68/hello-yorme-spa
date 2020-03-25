@@ -11,6 +11,10 @@ import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
 
 /* Components */
+import { LoginPageComponent } from './features/login/login-page.component';
+import { RegisterPageComponent } from './features/register/register-page.component';
+import { ForgotPasswordPageComponent } from './features/forgot-password/forgot-password-page.component';
+import { MaintenancePageComponent } from './features/maintenance/maintenance-page.component';
 import { ErrorPageComponent } from './features/error/error-page.component';
 import { ComingSoonPageComponent } from './features/coming-soon/coming-soon-page.component';
 
@@ -21,6 +25,10 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    ForgotPasswordPageComponent,
+    MaintenancePageComponent,
     ErrorPageComponent,
     ComingSoonPageComponent
   ],

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   token: string;
 
-  constructor() {}
+  constructor() { }
 
   signupUser(email: string, password: string) {
     //your code for signing up the new user
@@ -15,11 +15,11 @@ export class AuthService {
     //your code for checking credentials and getting tokens for for signing in user
   }
 
-  logout() {   
+  logout() {
     this.token = null;
   }
 
-  getToken() {    
+  getToken() {
     return this.token;
   }
 

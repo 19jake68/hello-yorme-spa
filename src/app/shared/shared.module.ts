@@ -6,15 +6,15 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   exports: [
-      CommonModule,
-      NgbModule,
-      TranslateModule
+    CommonModule,
+    NgbModule,
+    TranslateModule
   ],
   imports: [
-      RouterModule,
-      CommonModule,
-      NgbModule,
-      TranslateModule
+    RouterModule,
+    CommonModule,
+    NgbModule,
+    TranslateModule
   ],
   declarations: []
 })
