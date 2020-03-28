@@ -51,6 +51,21 @@ Then install [Concurrently](https://www.npmjs.com/package/concurrently) for auto
 $ npm install -g concurrently
 ```
 
+### Install Certificate to run app on SSL
+1. Double click on the certificate (`/cert/server.crt`)
+2. Click on the button “Install Certificate …”
+3. Select whether you want to store it on user level or on machine level
+4. Click “Next”
+5. Select “Place all certificates in the following store”
+6. Click “Browse”
+7. Select “Trusted Root Certification Authorities”
+8. Click “Ok”
+9. Click “Next”
+10. Click “Finish”
+11. If you get a prompt, click “Yes”
+
+The certificate is now installed.   
+
 ### Start Server for Development
 
 Run `npm run start:dev` to run the app:

@@ -1,11 +1,17 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { AuthService as SocialAuthService, SocialUser } from 'angularx-social-login';
+import { Observable, Subscription } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
   token: string;
 
-  constructor() { }
+  constructor(
+    private socialAuthService: SocialAuthService,
+    private user: SocialUser
+  ) { }
 
   signupUser(email: string, password: string) {
     //your code for signing up the new user
@@ -17,14 +23,15 @@ export class AuthService {
 
   logout() {
     this.token = null;
+    this.socialAuthService.signOut();
   }
 
   getToken() {
     return this.token;
   }
 
-  isAuthenticated() {
-    // here you can check if user is authenticated or not through his token 
-    return true;
+  isAuthenticated(): boolean {
+    console.log(this.user == null);
+    return localStorage.getItem('__u') ? true : false;
   }
 }
