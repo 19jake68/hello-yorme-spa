@@ -1,5 +1,5 @@
-# mayor-ui
-[![Build Status](https://cicd.labadapp.com/buildStatus/icon?job=mayor-ui)](https://cicd.labadapp.com/job/mayor-ui/)
+# hello-yorme-spa
+[![Build Status](https://cicd.labadapp.com/buildStatus/icon?job=hello-yorme-spa)](https://cicd.labadapp.com/job/hello-yorme-spa/)
 
 ## Introduction
 
@@ -16,7 +16,7 @@ Table of Contents:
 
 ## Jenkins Plan
 
-https://cicd.labadapp.com/job/mayor-ui/
+https://cicd.labadapp.com/job/hello-yorme-spa/
 
 ## Requirements
 
@@ -30,8 +30,8 @@ Make sure you have the following installed:
 
 Fork this repository and clone your fork
 ```bash
-$ git clone git@github.com:<YOUR-PROFILE>/mayor-ui.git
-$ cd mayor-ui
+$ git clone git@github.com:<YOUR-PROFILE>/hello-yorme-spa.git
+$ cd hello-yorme-spa
 ```
 Run `npm install` to install library dependencies
 ```bash
@@ -94,7 +94,7 @@ You should see something like this in the logs:
 ```
 $ npm run test
 
-> mayor-ui@1.0.0 test ~/mayor-ui
+> hello-yorme-spa@1.0.0 test ~/hello-yorme-spa
 > ng test --code-coverage
 
  10% building modules 1/1 modules 0 active20 05 2019 14:11:07.939:WARN [proxy]: proxy "/base/build" normalized to "/base/build/"
@@ -140,7 +140,7 @@ You should see something like this if lint results are good:
 
     $ npm run lint
 
-    > mayor-ui@1.0.0 lint ~/mayor-ui
+    > hello-yorme-spa@1.0.0 lint ~/hello-yorme-spa
     > ng lint
 
     All files pass linting.
