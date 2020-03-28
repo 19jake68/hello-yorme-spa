@@ -1,12 +1,9 @@
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
-import { Observable } from 'rxjs';
-import { SocialUser } from 'angularx-social-login';
-import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class GuestGuard implements CanActivate {
 
   constructor(
     private authService: AuthService,
@@ -14,11 +11,11 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.authService.isAuthenticated()) {
+    if (!this.authService.isAuthenticated()) {
       return true;
     }
     
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
     return false;
   }
 }
