@@ -59,7 +59,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="layout-dark bg-tundora">
     <app-root></app-root>
     <div class="page-loading">
       <img src="assets/img/oval.svg" class="loading-icon" />
@@ -68,14 +68,12 @@
     <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '2836242799792425',
-          cookie     : true,
-          xfbml      : true,
-          version    : 'v6.0'
+          appId: '2836242799792425',
+          cookie: true,
+          xfbml: true,
+          version: 'v6.0'
         });
-          
         FB.AppEvents.logPageView();   
-          
       };
     
       (function(d, s, id){
@@ -84,7 +82,7 @@
          js = d.createElement(s); js.id = id;
          js.src = "https://connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+      }(document, 'script', 'facebook-jssdk'));
     </script>
   </body>
 </html>

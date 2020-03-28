@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { AuthService as SocialAuthService, SocialUser } from 'angularx-social-login';
-import { Observable, Subscription } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import {
+  AuthService as SocialAuthService,
+  SocialUser
+} from 'angularx-social-login';
 
 @Injectable()
 export class AuthService {
@@ -11,14 +11,14 @@ export class AuthService {
   constructor(
     private socialAuthService: SocialAuthService,
     private user: SocialUser
-  ) { }
+  ) {}
 
   signupUser(email: string, password: string) {
-    //your code for signing up the new user
+    // your code for signing up the new user
   }
 
   signinUser(email: string, password: string) {
-    //your code for checking credentials and getting tokens for for signing in user
+    // your code for checking credentials and getting tokens for for signing in user
   }
 
   logout() {
@@ -30,8 +30,11 @@ export class AuthService {
     return this.token;
   }
 
+  getUser(): object {
+    return JSON.parse(localStorage.getItem('__u'));
+  }
+
   isAuthenticated(): boolean {
-    console.log(this.user == null);
     return localStorage.getItem('__u') ? true : false;
   }
 }
