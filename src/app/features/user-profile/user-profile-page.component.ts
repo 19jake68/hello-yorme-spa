@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 export class UserProfilePageComponent implements OnInit {
   // Variable Declaration
   currentPage = 'TimeLine';
-  user: object;
+  user: any;
 
   constructor(
     private authService: AuthService
