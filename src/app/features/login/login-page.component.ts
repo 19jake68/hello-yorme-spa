@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
       if (user) {
         this.user = user;
         localStorage.setItem('__u', JSON.stringify(this.user));
-        this.router.navigate(['/home'], { relativeTo: this.route.parent });
+        this.router.navigate([''], { relativeTo: this.route.parent });
       }
     });
   }
