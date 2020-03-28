@@ -9,13 +9,18 @@ import { ForgotPasswordPageComponent } from './features/forgot-password/forgot-p
 import { MaintenancePageComponent } from './features/maintenance/maintenance-page.component';
 import { ErrorPageComponent } from './features/error/error-page.component';
 import { ComingSoonPageComponent } from './features/coming-soon/coming-soon-page.component';
+import { TermsPageComponent } from './features/terms/terms-page.component';
+import { PrivacyPageComponent } from './features/privacy/privacy-page.component';
+import { DisclaimerPageComponent } from './features/disclaimer/disclaimer-page.component';
 import { HomePageComponent } from './features/home/home-page.component';
+import { UserProfilePageComponent } from './features/user-profile/user-profile-page.component';
 
 const routes: Routes = [
   // Authenticated user routes
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
-  
+  { path: 'profile', component: UserProfilePageComponent, canActivate: [AuthGuard] },
+
   // Guest routes
   {
     path: 'login',
@@ -43,6 +48,27 @@ const routes: Routes = [
   },
 
   // Common routes
+  {
+    path: 'terms',
+    component: TermsPageComponent,
+    data: {
+      title: 'Terms and Condition'
+    }
+  },
+  {
+    path: 'privacy',
+    component: PrivacyPageComponent,
+    data: {
+      title: 'Privacy Policy'
+    }
+  },
+  {
+    path: 'disclaimer',
+    component: DisclaimerPageComponent,
+    data: {
+      title: 'Disclaimer'
+    }
+  },
   {
     path: 'maintenance',
     component: MaintenancePageComponent,

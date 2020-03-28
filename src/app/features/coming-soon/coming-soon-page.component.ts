@@ -18,7 +18,7 @@ export class ComingSoonPageComponent implements OnInit, OnDestroy {
 
   countdown: any;
 
-  private _unsubscribeAll: Subject<any>;
+  private unsubscribeAll: Subject<any>;
 
   constructor() {
     // Set the defaults
@@ -31,7 +31,7 @@ export class ComingSoonPageComponent implements OnInit, OnDestroy {
     };
 
     // Set the private defaults
-    this._unsubscribeAll = new Subject();
+    this.unsubscribeAll = new Subject();
   }
 
   ngOnInit() {
@@ -53,7 +53,7 @@ export class ComingSoonPageComponent implements OnInit, OnDestroy {
 
     // Subscribe to the countdown interval
     countDown
-      .pipe(takeUntil(this._unsubscribeAll))
+      .pipe(takeUntil(this.unsubscribeAll))
       .subscribe(value => {
         this.countdown = value;
       });
@@ -63,8 +63,8 @@ export class ComingSoonPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     // Unsubscribe from all subscriptions
-    this._unsubscribeAll.next();
-    this._unsubscribeAll.complete();
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 
   private calculateRemainingTime(seconds): any {

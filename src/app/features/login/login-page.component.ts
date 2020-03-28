@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from "@angular/router";
-import { AuthService, SocialUser } from "angularx-social-login";
-import { FacebookLoginProvider } from "angularx-social-login";
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService, SocialUser } from 'angularx-social-login';
+import { FacebookLoginProvider } from 'angularx-social-login';
 
 @Component({
   selector: 'app-login-page',
@@ -33,7 +33,7 @@ export class LoginPageComponent implements OnInit {
 
   signInWithFB(): void {
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  } 
+  }
 
   // On submit button click
   onSubmit() {

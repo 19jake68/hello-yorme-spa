@@ -9,7 +9,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
-import { SocialLoginModule, AuthServiceConfig, LoginOpt, SocialUser } from 'angularx-social-login';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  LoginOpt,
+  SocialUser
+} from 'angularx-social-login';
 import { FacebookLoginProvider } from 'angularx-social-login';
 
 /* Components */
@@ -20,7 +25,11 @@ import { MaintenancePageComponent } from './features/maintenance/maintenance-pag
 import { ErrorPageComponent } from './features/error/error-page.component';
 import { ComingSoonPageComponent } from './features/coming-soon/coming-soon-page.component';
 import { GuestGuard } from './shared/auth/guest-guard.service';
+import { TermsPageComponent } from './features/terms/terms-page.component';
+import { PrivacyPageComponent } from './features/privacy/privacy-page.component';
+import { DisclaimerPageComponent } from './features/disclaimer/disclaimer-page.component';
 import { HomePageComponent } from './features/home/home-page.component';
+import { UserProfilePageComponent } from './features/user-profile/user-profile-page.component';
 
 const fbLoginOptions: LoginOpt = {
   scope: 'public_profile,email',
@@ -28,10 +37,11 @@ const fbLoginOptions: LoginOpt = {
   enable_profile_selector: true
 }; // https://developers.facebook.com/docs/reference/javascript/FB.login/v2.11
 
-let config = new AuthServiceConfig([
+const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("2836242799792425", fbLoginOptions)
+    provider: new FacebookLoginProvider('2836242799792425', fbLoginOptions),
+    lazyLoad: true
   }
 ]);
 
@@ -47,19 +57,23 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     HomePageComponent,
+    UserProfilePageComponent,
     LoginPageComponent,
     RegisterPageComponent,
     ForgotPasswordPageComponent,
     MaintenancePageComponent,
     ErrorPageComponent,
-    ComingSoonPageComponent
+    ComingSoonPageComponent,
+    TermsPageComponent,
+    PrivacyPageComponent,
+    DisclaimerPageComponent
   ],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    NgbModule.forRoot(),
+    NgbModule,
     SocialLoginModule,
     TranslateModule.forRoot({
       loader: {
@@ -81,4 +95,4 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
