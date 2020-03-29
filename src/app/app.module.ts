@@ -1,4 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -91,7 +92,8 @@ export function createTranslateLoader(http: HttpClient) {
       provide: AuthServiceConfig,
       useFactory: provideConfig
     },
-    SocialUser
+    SocialUser,
+    Title
   ],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,7 @@
             <div class="col-5">
               <div class="align-self-start halfway-fab pl-3 pt-2">
                 <div class="text-left">
-                  <h3 class="card-title white">{{ user.name }}</h3>
+                  <h3 class="card-title white">{{ profile.name }}</h3>
                 </div>
               </div>
             </div>
@@ -21,7 +21,7 @@
               <div class="align-self-center halfway-fab text-center">
                 <a class="profile-image">
                   <img
-                    src="{{ user.photoUrl }}"
+                    src="{{ profile.photoUrl }}"
                     class="rounded-circle img-border gradient-summer width-100 height-100"
                     alt="Card image"
                   />
@@ -79,7 +79,7 @@
                 </ul>
               </div>
               <div class="col-lg-2 col-md-2 text-center">
-                <span class="font-medium-2">{{ user.name }}</span>
+                <span class="font-medium-2">{{ profile.name }}</span>
               </div>
               <div class="col-lg-5 col-md-5">
                 <ul class="profile-menu no-list-style">

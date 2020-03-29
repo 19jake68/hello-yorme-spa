@@ -14,12 +14,20 @@ import { PrivacyPageComponent } from './features/privacy/privacy-page.component'
 import { DisclaimerPageComponent } from './features/disclaimer/disclaimer-page.component';
 import { HomePageComponent } from './features/home/home-page.component';
 import { UserProfilePageComponent } from './features/user-profile/user-profile-page.component';
+import { UserProfileResolver } from './shared/resolvers/user-profile.resolver';
 
 const routes: Routes = [
   // Authenticated user routes
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
-  { path: 'profile', component: UserProfilePageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'profile',
+    component: UserProfilePageComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      profile: UserProfileResolver
+    }
+  },
 
   // Guest routes
   {
@@ -100,7 +108,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  providers: [UserProfileResolver],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

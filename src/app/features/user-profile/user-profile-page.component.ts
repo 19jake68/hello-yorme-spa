@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/auth/auth.service';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-profile-page',
@@ -9,21 +10,31 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 export class UserProfilePageComponent implements OnInit {
   // Variable Declaration
   currentPage = 'TimeLine';
-  user: any;
+  profile: any;
 
   constructor(
-    private authService: AuthService
+    private titleService: Title,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.initUserData();
+    this.initProfileData();
+    this.initPageTitle();
   }
 
   showPage(page: string) {
     this.currentPage = page;
   }
 
-  private initUserData(): void {
-    this.user = this.authService.getUser();
+  private initProfileData(): void {
+    this.profile = this.route.snapshot.data.profile;
+  }
+
+  /**
+   * Initialize Page title
+   */
+  private initPageTitle(): void {
+    const appTitle = this.titleService.getTitle();
+    this.titleService.setTitle(this.profile.name + ' | ' + appTitle);
   }
 }
